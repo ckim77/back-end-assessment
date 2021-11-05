@@ -9,7 +9,6 @@ const getTasksButton = document.getElementById("get-tasks-button");
 const image = document.getElementById("image");
 
 //input
-const taskInput = document.getElementById("add-task-input");
 
 complimentButton.onclick = function () {
     axios.get(baseURL)
