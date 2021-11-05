@@ -1,12 +1,17 @@
+// SERVER
+
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 
-
 app.use(cors());
+app.use(express.json()); 
 
-app.use(express.json()); // When we want to be able to accept JSON.
+const tasks = ["buy groceries", "brush teeth", "eat healthy", "meditate", "shower", "wash face", "make bed", "cardio", "gym",
+                "relax", "read"]
+
+
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
@@ -36,6 +41,19 @@ let randomFortune = fortunes[randomIndex];
 
 res.status(200).send(randomFortune);
                 
+})
+
+app.get("/api/compliment/tasks", (req, res) => {
+    res.status(200).send(tasks);
+})
+
+app.get("/api/compliment/onetask", (req, res) => {
+  res.status(200).send(tasks[0]);
+})
+
+
+app.get("/api/compliment/image", (req, res) => {
+  res.status(200).send("You are awesome");
 })
 
 
