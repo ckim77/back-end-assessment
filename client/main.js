@@ -1,4 +1,5 @@
-const baseURL = `http://localhost:4000/api/compliment`
+
+const baseURL = `http://localhost:4000/api`
 
 //buttons
 const complimentButton = document.getElementById("complimentButton");
@@ -11,7 +12,7 @@ const image = document.getElementById("image");
 //input
 
 complimentButton.onclick = function () {
-    axios.get(baseURL)
+    axios.get(`${baseURL}/compliment`)
         .then(function (response) {
           const data = response.data;
           alert(data);
@@ -45,3 +46,9 @@ image.addEventListener('mouseover', () => {
         .get(`${baseURL}/image`)
         .then(res => alert(res.data));
 })
+
+
+
+
+
+

@@ -27,7 +27,7 @@ app.get("/api/compliment", (req, res) => {
   
 });
 
-app.get("/api/compliment/fortune", (req, res) => {
+app.get("/api/fortune", (req, res) => {
   const fortunes = ["Many will travel to hear you speak",
                     "Feeding a cow with roses does not get extra appreciation",
                     "Have a beautiful day",
@@ -43,19 +43,20 @@ res.status(200).send(randomFortune);
                 
 })
 
-app.get("/api/compliment/tasks", (req, res) => {
+app.get("/api/tasks", (req, res) => {
     res.status(200).send(tasks);
 })
 
-app.get("/api/compliment/onetask", (req, res) => {
+app.get("/api/onetask", (req, res) => {
   res.status(200).send(tasks[0]);
 })
 
 
-app.get("/api/compliment/image", (req, res) => {
+app.get("/api/image", (req, res) => {
   res.status(200).send("You are awesome");
 })
 
 
 
 app.listen(4000, () => console.log("Server running on 4000"));
+
