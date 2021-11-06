@@ -55,7 +55,7 @@ app.post("/api/addtasks", (req, res) => {
     tasks.push(req.body.data);
     res.status(200).send("Task added!");
   } else {
-    res.status(400).send("Please type a valid entry.");
+    res.status(400).send("Please enter a valid entry.");
   }
 })
 
@@ -70,10 +70,9 @@ app.put("/api/update", (req, res) => {
     tasks.splice(0, 1, updatedTask);
     res.status(200).send("First task updated.")
   } else {
-    res.status(400).send("Please type a valid entry.")
+    res.status(400).send("Please enter a valid entry.")
   }
 })
-
 
 app.listen(4000, () => console.log("Server running on 4000"));
 

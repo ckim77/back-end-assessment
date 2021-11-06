@@ -2,49 +2,52 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortune-button">Get a fortune</button>
-    
+    <button class = "top-btn" id="complimentButton">Get a compliment</button>
+    <button class = "top-btn" id="fortune-button">Get a fortune</button>
+  
     <header>
-      <h2 class='goal-title'>To-Do List</h2>
+      <h2 class='task-title'>To-Do List</h2>
   </header>
   <main>
   
     <section>
       <h4>Add task</h4>
       <input id="task-name"/>
-      <button id = "add-task-button">Add</button>
+      <button class = "btn" id = "add-task-button">Add</button>
     </section>
 
     <section>
       <section>
       <h4>Get all tasks</h4>
-      <button id='get-tasks-button'>Get</button>
+      <button class = "btn" id='get-tasks-button'>Get All Tasks</button>
     </section>
 
     <section>
       <h4>Click below to be given the first task on your list to finish.</h4>
-      <button id='one-task-button'>Get Task</button>
+      <button class = "btn" id='one-task-button'>Get First Task</button>
     </section>
 
     <section>
       <section>
       <h4>Delete the first task from your list after you finish it by clicking on the button below.</h4>
-      <button id='delete-task-button'>Delete</button>
+      <button class = "btn" id='delete-task-button'>Delete</button>
     </section>
 
     <section>
       <h4>Made a mistake? Submit below to change the first task on your list.</h4>
       <input id="update-task-name"/>
-      <button id = "update-task-button">Update</button>
+      <button class = "btn" id = "update-task-button">Update</button>
     </section>
 
     <section>
-      <h4></h4>
+      <h4>Here is a motivational quote from the GOAT to help you finsish your tasks.</h4>
       <img id="image" src="https://www.goalcast.com/wp-content/uploads/2020/02/Michael-Jordan-Quote.jpg">
     </section>
+
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
