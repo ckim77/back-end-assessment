@@ -8,10 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const tasks = ["buy groceries", "brush teeth", "eat healthy", "meditate", "shower", "wash face", "make bed", "cardio", "gym",
+const tasks = ["meditate", "shower", "make bed", "cardio", "gym",
                 "relax", "read"]
-
-
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
@@ -52,11 +50,19 @@ app.get("/api/onetask", (req, res) => {
 })
 
 
-app.get("/api/image", (req, res) => {
-  res.status(200).send("You are awesome");
+app.post("/api/addtasks", (req, res) => {
+  // console.log(req.body.data);
+  if (req.body.data) {
+    tasks.push(req.body.data);
+    res.status(200);
+  } else {
+    res.status(400).send("Please type a valid task");
+  }
 })
 
-
-
 app.listen(4000, () => console.log("Server running on 4000"));
+
+
+
+
 

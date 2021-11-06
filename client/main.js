@@ -4,10 +4,10 @@ const baseURL = `http://localhost:4000/api`
 //buttons
 const complimentButton = document.getElementById("complimentButton");
 const fortuneButton = document.getElementById("fortune-button");
-const checkTasksButton = document.getElementById('check-tasks-button');
 const oneTaskButton = document.getElementById('one-task-button');
 const getTasksButton = document.getElementById("get-tasks-button");
-const image = document.getElementById("image");
+const addTaskButton = document.getElementById('add-task-button');
+const taskInput = document.getElementById("task-name");
 
 //input
 
@@ -33,20 +33,19 @@ getTasksButton.addEventListener('click', () => {
         .then(res => alert(res.data));
 });
 
-
 oneTaskButton.addEventListener('click', () => {
     axios
         .get(`${baseURL}/onetask`)
         .then(res => alert(res.data));
 });
 
-
-image.addEventListener('mouseover', () => {
-    axios
-        .get(`${baseURL}/image`)
-        .then(res => alert(res.data));
-})
-
+addTaskButton.addEventListener("click", () => {
+  let body = taskInput.value;
+  axios
+      .post(`${baseURL}/addtasks`, {data:body})
+      .then(res => {alert("Task added!")})
+      taskInput.value = "";
+    });
 
 
 
