@@ -1,3 +1,6 @@
+
+
+
 const baseURL = `http://localhost:4000/api`
 
 //buttons
@@ -6,10 +9,13 @@ const fortuneButton = document.getElementById("fortune-button");
 const oneTaskButton = document.getElementById('one-task-button');
 const getTasksButton = document.getElementById("get-tasks-button");
 const addTaskButton = document.getElementById('add-task-button');
-const taskInput = document.getElementById("task-name");
 const deleteTaskButton = document.getElementById("delete-task-button");
+const updateTaskButton = document.getElementById("update-task-button")
 
 //input
+
+const taskInput = document.getElementById("task-name");
+const updateInput = document.getElementById("update-task-name")
 
 complimentButton.onclick = function () {
     axios.get(`${baseURL}/compliment`)
@@ -53,5 +59,12 @@ deleteTaskButton.addEventListener("click", () => {
     .then (res => alert(res.data));
 })
 
+updateTaskButton.addEventListener("click", () => {
+  let body = updateInput.value;
+  axios
+    .put(`${baseURL}/update`, {data:body})
+    .then(res => {alert(res.data)})
+    updateInput.value = "";
+})
 
 
