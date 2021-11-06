@@ -49,16 +49,22 @@ app.get("/api/onetask", (req, res) => {
   res.status(200).send(tasks[0]);
 })
 
-
 app.post("/api/addtasks", (req, res) => {
   // console.log(req.body.data);
   if (req.body.data) {
     tasks.push(req.body.data);
-    res.status(200);
+    res.status(200).send("Task added!");
   } else {
     res.status(400).send("Please type a valid task");
   }
 })
+
+app.delete("/api/delete", (req, res) => {
+  tasks.splice(0, 1);
+  res.status(200).send("Task deleted! Good job!");
+})
+
+
 
 app.listen(4000, () => console.log("Server running on 4000"));
 
