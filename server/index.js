@@ -8,8 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const tasks = ["meditate", "shower", "make bed", "cardio", "gym",
-                "relax", "read"]
+const tasks = ["meditate", "shower", "make bed", "gym", "read"]
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
